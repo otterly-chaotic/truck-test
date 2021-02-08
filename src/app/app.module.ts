@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TruckCardComponent } from './truck-cards/truck-card/truck-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, TruckCardComponent],
@@ -18,6 +19,7 @@ import { TruckCardComponent } from './truck-cards/truck-card/truck-card.componen
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,10 +1,13 @@
-<section fxLayout fxLayoutAlign="center">
-  <div class="filter-input">
+<section fxLayout="column" fxLayoutAlign="center center">
+  <div class="filter-input" fxLayoutGap="20px">
     <mat-form-field>
-      <input placeholder="Filter Trucks" autocomplete="off" #filter matInput>
+      <input style="font-size: 30px;" class="filter-input" type="text" placeholder="Filter Trucks" autocomplete="off"
+        [formControl]="filterInput" matInput>
     </mat-form-field>
   </div>
-  <div class="truck-deck">
-    <app-truck-card></app-truck-card>
+  <div class="truck-deck" *ngIf="(trucks$ | async) as trucks" fxLayout="column" fxLayoutGap="20px">
+    <div class="truck-card-wrap" *ngFor="let truck of trucks">
+      <app-truck-card [truck]="truck"></app-truck-card>
+    </div>
   </div>
 </section>

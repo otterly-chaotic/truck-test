@@ -1,11 +1,11 @@
-<div fxLayout fxLayoutAlign="center">
-  <mat-card fxFlex.xs="100%" fxFlex="500px">
-    <mat-card-title fxLayoutAlign="center">{{ truck.name }}</mat-card-title>
-    <mat-card-content fxLayout="row" fxLayoutAlign="center center" *ngFor="let item of truck.orders">
-      <div fxFlex fxLayout="row" fxLayoutGap="5px" class="order">
-        <p fxFlex>From: {{ item.from }}</p>
-        <p fxFlex>To: {{ item.to }}</p>
-      </div>
+  <mat-card fxLayout="column" fxFlex.xs="100%" fxFlex="500px">
+    <mat-card-title fxFlex fxLayoutAlign="center">{{ truck.name }}</mat-card-title>
+    <mat-card-content fxFlex>
+      <carousel [cellsToShow]="1">
+        <div class="order carousel-cell" *ngFor="let item of truck.orders">
+          <p>From: {{ item.from }}</p>
+          <p>To: {{ item.to }}</p>
+        </div>
+      </carousel>
     </mat-card-content>
   </mat-card>
-</div>

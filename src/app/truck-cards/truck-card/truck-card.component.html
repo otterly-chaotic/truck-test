@@ -1,10 +1,12 @@
   <mat-card fxLayout="column" fxFlex.xs="100%" fxFlex="500px">
     <mat-card-title fxFlex fxLayoutAlign="center">{{ truck.name }}</mat-card-title>
-    <mat-card-content fxFlex>
+    <mat-card-content fxFlex fxLayout="column" fxLayoutAlign="center center">
       <carousel [cellsToShow]="1">
-        <div class="order carousel-cell" *ngFor="let item of truck.orders">
-          <p>From: {{ item.from }}</p>
-          <p>To: {{ item.to }}</p>
+        <div fxLayout="column" fxLayoutAlign="center center" class="order carousel-cell"
+          *ngFor="let item of truck.orders; let i = index">
+          <p fxFlex>From: {{ item.from }}</p>
+          <p fxFlex>To: {{ item.to }}</p>
+          <p fxFlex>Order: {{ i + 1 }}/{{ truck.orders.length }}</p>
         </div>
       </carousel>
     </mat-card-content>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataProviderService } from './data-provider.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,9 @@ import { DataProviderService } from './data-provider.service';
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
-  title = 'truck-test';
+  title = 'Truck Tracker';
 
-  constructor(private dataService: DataProviderService) {}
+  constructor() {}
 
   ngOninit() {}
 }

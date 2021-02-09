@@ -33,11 +33,9 @@ export class AppComponent {
 
   ngAfterViewInit() {
     const filteredTrucks$ = this.filterInput.valueChanges.pipe(
-      tap((value) => console.log(value)),
       debounceTime(500),
       distinctUntilChanged(),
-      switchMap((filterValue) => this.dataService.filterTrucks$(filterValue)),
-      tap((value) => console.log(value))
+      switchMap((filterValue) => this.dataService.filterTrucks$(filterValue))
     );
 
     const unfilteredTrucks$ = this.dataService.filterTrucks$();
